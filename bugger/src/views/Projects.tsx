@@ -40,17 +40,17 @@ const modalStyle = {
 };
 
 
-function getRandomNumber(min: any, max: any) {
-  let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-  while (numbersarr.includes(randomNumber)) {
-    randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  numbersarr.push(randomNumber)
-  return randomNumber
+// function getRandomNumber(min: any, max: any) {
+//   let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+//   while (numbersarr.includes(randomNumber)) {
+//     randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+//   }
+//   numbersarr.push(randomNumber)
+//   return randomNumber
 
-}
-//{getRandomNumber(1,100)}
-const numbersarr: any[] = [];
+// }
+// //{getRandomNumber(1,100)}
+// const numbersarr: any[] = [];
 
 
 
@@ -150,7 +150,7 @@ export default function Album() {
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Project  {getRandomNumber(1, 100)}
+                      Project  {card}
                     </Typography>
                     <Typography>
                       This is a media card. You can use this section to describe the
