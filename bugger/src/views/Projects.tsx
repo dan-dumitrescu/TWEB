@@ -13,7 +13,7 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { relative } from 'path';
 import { Button, IconButton, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { createRef, useRef, useState } from 'react';
 import { Modal, TextField } from '@mui/material';
 
 
@@ -66,7 +66,10 @@ const defaultTheme = createTheme();
 export default function Album() {
   const [open, setOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
-  const [bugDescription, setBugDescription] = useState('');
+  // const [bugDescription, setBugDescription] = useState('');
+  let bugDescription = '';
+  const inputRef = useRef<HTMLInputElement>(null);
+
 
 
   // Funcția pentru deschiderea modalei și setarea proiectului selectat
@@ -76,13 +79,18 @@ export default function Album() {
   };
 
   // Funcția pentru închiderea modalei
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+  }
 
-  const handleDescriptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setBugDescription(event.target.value);
-  };
+  // const handleDescriptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setBugDescription(event.target.value);
+  // };
 
   const handleSubmit = () => {
+    if (inputRef.current) {
+      bugDescription = inputRef.current.value;
+  }
     console.log('Submitted Bug Description:', bugDescription);
     // Aici ai adăuga logica pentru trimiterea datelor la un server, de exemplu
     handleClose();
@@ -191,8 +199,8 @@ export default function Album() {
       multiline
       rows={4}
       placeholder="Write your bug here"
-      value={bugDescription}
-      onChange={handleDescriptionChange}
+      inputRef={inputRef}
+      id="bugDescription"
       sx={{ mt: 2 }}
     />
     <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
