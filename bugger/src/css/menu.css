@@ -1,0 +1,21 @@
+.menu{
+    margin-bottom: 30 px;;
+    background: red;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    /* alte stiluri pentru logo */
+}
+
+.navigation a {
+    color: #fff;
+    margin-left: 40px;
+    /* alte stiluri pentru link-uri */
+}
+.btnLogin-popup {
+    background: transparent;
+    color: #fff;
+    /* alte stiluri pentru buton */
+}

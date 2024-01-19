@@ -1,0 +1,70 @@
+/* Asigurăm că toate elementele de la rădăcină până la dorit sunt resetate și nu influențează stilul */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Stiluri pentru wrapper-ul formularului de contact */
+.wrapper.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Stiluri pentru structura interioară a formularului */
+.letter {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Elementele vor fi așezate vertical */
+  max-width: 500px; /* Lățime maximă pentru întregul formular */
+  width: 100%; /* Se va adapta la lățimea disponibilă */
+}
+
+/* Stiluri pentru partea de sus a formularului cu titlu și textarea */
+.letter .side {
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Inputurile vor fi așezate vertical */
+}
+
+/* Stiluri pentru titlu */
+.letter h1 {
+  margin-bottom: 20px;
+}
+
+/* Stiluri pentru textarea și input, să aibă aceeași lățime */
+.letter textarea,
+.letter input[type="text"] {
+  width: 100%; /* Se va extinde să ocupe întreaga lățime a părintelui */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Stiluri pentru buton */
+.letter button {
+  align-self: flex-start; /* Aliniază butonul la începutul axei */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Adaugă hover efect pentru buton */
+.letter button:hover {
+  background-color: #0056b3;
+}
+
+/* Stilurile pentru elementele de plic pot fi adăugate aici dacă este necesar */
+.envelope.front, .envelope.back {
+  /* Stiluri pentru a arăta ca un plic, dacă este necesar */
+}
