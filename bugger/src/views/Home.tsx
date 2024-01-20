@@ -14,6 +14,7 @@ const HomePage = () => {
           sx={{
             height: isMobile ? 'auto' : '100vh',
             background: `url(${backgroundImg})`,
+            overflow: 'hidden',
             backgroundSize: 'cover',
           }}
         />
@@ -24,6 +25,7 @@ const HomePage = () => {
           sx={{
             padding: theme.spacing(4),
             height: isMobile ? 'auto' : '100vh',
+       
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',

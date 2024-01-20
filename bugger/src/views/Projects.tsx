@@ -15,6 +15,7 @@ import { relative } from 'path';
 import { Button, IconButton, Typography } from '@mui/material';
 import React, { createRef, useRef, useState } from 'react';
 import { Modal, TextField } from '@mui/material';
+import {  Radio, RadioGroup, FormControlLabel, FormControl } from '@mui/material';
 
 
 
@@ -28,6 +29,7 @@ function Copyright() {
 
 const modalStyle = {
   position: 'absolute' as const,
+  overflow: 'auto',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
@@ -189,11 +191,13 @@ export default function Album() {
     </IconButton>
     <Box component="img"
       src="https://source.unsplash.com/random?wallpapers"
+      overflow={'auto'}
       sx={{ width: '100%', height: 'auto', my: 2 }}
     />
     <Typography id="modal-description" sx={{ mt: 2 }}>
       This is where you can write the bug you noticed.
     </Typography>
+
     <TextField
       fullWidth
       multiline
@@ -203,6 +207,18 @@ export default function Album() {
       id="bugDescription"
       sx={{ mt: 2 }}
     />
+     <FormControl component="fieldset" sx={{ mt: 2 }}>
+      <Typography variant="subtitle1">Severity Level:</Typography>
+      <RadioGroup
+        aria-label="severity"
+        defaultValue="Low"
+        name="radio-buttons-group"
+      >
+        <FormControlLabel value="Low" control={<Radio />} label="Low" />
+        <FormControlLabel value="Medium" control={<Radio />} label="Medium" />
+        <FormControlLabel value="High" control={<Radio />} label="High" />
+      </RadioGroup>
+    </FormControl> 
     <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
       <Button onClick={handleClose} sx={{}}>
         Back
